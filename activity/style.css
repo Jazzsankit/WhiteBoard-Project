@@ -1,0 +1,178 @@
+* {
+    box-sizing: border-box;
+  }
+  
+  body,
+  html {
+    margin: 0px;
+  }
+  
+  .tools {
+    /* background: aliceblue; */
+    height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .content {
+    height: calc(100vh - 100px);
+    background: white;
+
+  }
+  
+  #canvas {
+    /* height: 100%;
+      width: 100%;
+      background: cadetblue; */
+      display: block;
+  }
+  
+  .toolbox {
+    display: flex;
+  justify-content: space-evenly;
+  width: 70%;
+  /* background: aliceblue; */
+  height: 82%;
+  align-items: center;
+  border-radius: 19px;
+  box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.175);
+  }
+  .tool {
+    position: relative;
+    height: 50px;
+  }
+  .tool img {
+    height: 100%;
+  }
+  .red {
+    background: red;
+  }
+  .yellow {
+    background: yellow;
+  }
+  .blue {
+    background: blue;
+  }
+  .black {
+    background: black;
+  }
+  
+  .tool-options {
+    height: 100px;
+    width: 160px;
+    /* border: 1px solid; */
+    position: absolute;
+    background: lightgray;
+    border-radius: 10px;
+    top: 65px;
+    left: -60px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+  }
+  
+  .pencil-colors {
+    display: flex;
+    width: 100%;
+    justify-content: space-around;
+  }
+  
+  .pencil-colors div {
+    height: 30px;
+    width: 30px;
+    border-radius: 20px;
+  }
+  
+  
+  .hide{
+      display: none;
+  }
+  
+  .active-tool{
+      background: lightgray;
+      height: 60px;
+      padding: 7px;
+      border-radius: 25px;
+  }
+
+  .sticky, .image-file{
+    position: absolute;
+    top: 250px;
+    left: 295px;
+    /* background: #3dc465; */
+    /* height: 209px; */
+    border: 1px solid lightgray;
+    width: 257px;
+  }
+  .header{
+    height: 32px;
+    background: cornsilk;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    border-block-end: 1px solid lightgray;
+    width: 100%;
+}
+  .minimize{
+    height: 19px;
+    background: green;
+    width: 19px;
+    border-radius: 20px;
+    margin-right: 2px;
+  }
+  .close {
+    height: 19px;
+    background: red;
+    width: 19px;
+    border-radius: 18px;
+    margin-right: 5px;
+}
+  .stickyContent{
+      display: block;
+  }
+
+  .textArea{
+    border: none;
+}
+
+img{
+  width: 100%;
+}
+
+@keyframes tool {
+  0%{
+    opacity:0;
+    transform: scale(0);
+  }
+  50%{
+    opacity: 0.5;
+    transform: scale(0.5);
+  }
+  100%{
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+  .add-animation{
+    animation: tool 0.5s;
+  }
+
+  .tool-button{
+    left: 44px;
+    position: absolute;
+    height: 25px;
+    box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.175);
+    height: 51px;
+    width: 42px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 28px;
+  }
+  .fas ,.fa-bars{
+    font-size: 31px;
+    color: lightgray;
+  }

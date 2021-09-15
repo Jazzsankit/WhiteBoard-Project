@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="tools">
+        <div class="tool-button">
+            <i class="fas fa-bars"></i>
+        </div>
+        <div class="toolbox add-animation">
+            <div class="tool active-tool" id="pencil">
+                <img src="./Icons/NewIcons/Black_Pencil.svg" alt="">
+                <div class="tool-options hide" id="pencil-options">
+                    <input type="range" name="" id="pencilSize" value="1" min="1" max="40">
+                    <div class="pencil-colors">
+                        <div class="red"></div>
+                        <div class="yellow"></div>
+                        <div class="blue"></div>
+                        <div class="black"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="tool" id="eraser">
+                <img src="./Icons/NewIcons/Eraser.svg" alt="">
+                <div class="tool-options hide" id="eraser-options">
+                    <input type="range" name="" id="eraserSize" value="1" min="1" max="40">
+                </div>
+            </div>
+            <div class="tool" id="stickyNote">
+                <img src="./Icons/NewIcons/StickyNote.svg" alt="">
+            </div>
+            <div class="tool" id="image">
+                <img src="./Icons/NewIcons/Photo.svg" alt="">
+                <input type="file" name="" id="fileUpload" style="display: none;">
+            </div>
+            <div class="tool" id="download">
+                <img src="./Icons/NewIcons/Download.svg" alt="">
+            </div>
+            <div class="tool" id="undo">
+                <img src="./Icons/NewIcons/Undo.svg" alt="">
+            </div>
+            <div class="tool" id="redo">
+                <img src="./Icons/NewIcons/Redo.svg" alt="">
+            </div>
+        </div>
+    </div>
+    <div class="content">
+        <canvas id="canvas"></canvas>
+    </div>
+    <!-- <div class="image-file">
+        <div class="header">
+            <div class="minimize"></div>
+            <div class="close"></div>
+        </div>
+        <div class="image-content">
+            <img src="" alt="" class="src">
+        </div>
+    </div> -->
+</body>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.2.0/socket.io.js" integrity="sha512-WL6WGKMPBiM9PnHRYIn5YEtq0Z8XP4fkVb4qy7PP4vhmYQErJ/dySyXuFIMDf1eEYCXCrQrMJfkNwKc9gsjTjA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script>
+    const socket = io.connect('https://whiteboard-api-server1.herokuapp.com/');
+    socket.emit("testing",'hey i am testing the socket')
+</script>
+<script src="./script.js"></script>
+<script src="./tools.js"></script>
+<script src="./createSticky.js"></script>
+<script src="./sticky.js"></script>
+<script src="./img.js"></script>
+<script src="./socket.js"></script>
+<!-- <script>
+// canvas ke functions => 2d drawing kese hoiti hai
+const canvas = document.getElementById('canvas');
+const ctx = canvas.getContext('2d'); // getContext("2d") => context dega jisse drawing ho skti hai
+// ctx.fillStyle = 'green';
+// ctx.fillRect(100, 10, 150, 100);
+// x axis offset , y axis offset , width , height
+ctx.beginPath();
+ctx.moveTo(10,10);
+ctx.lineTo(100,10);
+ctx.lineTo(100 , 50);
+ctx.lineTo(10 , 50);
+ctx.stroke();
+</script> -->
+</html>
